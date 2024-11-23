@@ -55,6 +55,11 @@ button:hover {
     background-color: var(--button-hover-bg);
 }
 
+button a {
+    text-decoration: none;
+    color: white;
+}
+
 .section-padding {
     padding: 40px 80px;
     margin: 60px 0;
@@ -64,9 +69,15 @@ button:hover {
     text-align: center;
     font-size: 48px;
     margin-bottom: 40px;
+    font-family: "Lora", serif;
 }
 
 span {
+    color: var(--primary-color)
+}
+
+span:not(.hero h1 span, .seller-final p span, .content-right h2 span) {
+    font-family: "Lora", serif;
     color: var(--primary-color)
 }
 
@@ -88,7 +99,7 @@ nav {
     padding: 10px;
 }
 
-ul {
+.nav-links {
     display: flex;
     list-style: none;
     justify-content: space-between;
@@ -117,7 +128,74 @@ ul li a:hover {
 
 .open {
     display: none;
+    padding: 8px;
 }
+
+.open:hover {
+    color: var(--primary-color);
+}
+
+.open i {
+    font-size: 22px;
+}
+
+.sidebar {
+    position: fixed;
+    background-color: var(--secondary-color);
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+}
+
+.sidebar h1 {
+    color: white;
+    text-align: left;
+    width: 100%;
+    border-bottom: 0.5px solid white;
+}
+
+.sidebar-nav-links {
+    list-style: none;
+    flex: 1;
+    width: 100%;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.sidebar-nav-links li {
+    width: 100%;
+    display: flex;
+    flex: 1;
+
+}
+
+.sidebar-nav-links li a {
+    color: white;
+    flex: 1;
+    font-size: 20px;
+}
+
+.close {
+    position: absolute;
+    color: white;
+    top: 12px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.close:hover {
+    color: var(--primary-color)
+}
+
 
 .hero {
     background: url('pics/hero13.png') no-repeat center/cover;
@@ -237,6 +315,8 @@ ul li a:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    background-color: hsl(0, 0%, 97%);
+    border-radius: 6px;
 }
 
 .project-card {
@@ -357,11 +437,51 @@ ul li a:hover {
     text-align: center;
 }
 
+.faq {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background-color: hsl(0, 0%, 97%);
+    width: 70%;
+    border-radius: 6px;
+}
+
+.faquestion {
+    width: 100%;
+    border-bottom: 1px solid var(--secondary-color);
+    cursor: pointer;
+}
+
+.faquestion h2 {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+}
+
 .contact-form {
     display: flex;
     flex-wrap: wrap;
 }
 
+.faqP {
+    transition: 0.3s ease-in-out;
+}
+
+.arrow {
+    transition: 0.3s ease-in-out;
+    color: var(--primary-color)
+}
+
+.rotate {
+    transform: rotate(180deg);
+}
 
 .contact-left h2 {
     margin-bottom: 20px;
@@ -439,11 +559,77 @@ textarea {
 
 footer {
     background-color: var(--secondary-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     color: white;
-    height: 70px;
+    padding: 20px;
+    padding-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+
+}
+
+footer button {
+    font-size: 13px;
+    background-color: rgba(230, 106, 43, 0.1);
+}
+
+footer button:hover {
+    background-color: var(--callToAction-color);
+}
+
+
+.footer-container p:not(:nth-child(3), :nth-child(4)) {
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-family: 'Lora';
+}
+
+.footer-container p:not(:first-child, :nth-child(3)) {
+    margin-bottom: 20px;
+}
+
+.footer-container p:not(:nth-child(2)) {
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-container2 {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.footer-container2 a {
+    text-decoration: none;
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    transition: 0.2s ease;
+    width: 400px;
+}
+
+.footer-container2 a:hover {
+    color: var(--callToAction-color);
+}
+
+footer h1 {
+    color: white;
+    font-size: 26px;
+    width: fit-content;
+    margin-bottom: 20px;
+}
+
+footer h2 {
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 20px;
 }
 
 @media (max-width:1100px) {
@@ -489,6 +675,11 @@ footer {
     .contact-form {
         flex-direction: column;
     }
+
+    .faq .faq-container {
+        width: 100%;
+        padding: 20px 0;
+    }
 }
 
 @media (max-width:700px) {
@@ -514,12 +705,23 @@ footer {
     .content-right h2 {
         text-align: center;
     }
+
+    .faquestion h2 {
+        font-size: 20px;
+    }
 }
 
 @media (max-width:500px) {
     .hero {
         align-items: center;
         padding: 4px;
+        background: url('pics/hero13.png') no-repeat center/cover;
+        height: 80vh;
+        background-position: bottom;
+    }
+
+    .faquestion h2 {
+        font-size: 18px;
     }
 
     .hero h1 {
@@ -546,8 +748,15 @@ footer {
         text-align: center;
     }
 
+    .footer-container2 a {
+        width: fit-content;
+    }
 
 
 
 
+}
+
+.hidden {
+    display: none;
 }
