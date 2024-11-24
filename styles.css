@@ -62,8 +62,9 @@ button a {
 
 .section-padding {
     padding: 40px 80px;
-    margin: 60px 0;
+    margin: 40px 0;
 }
+
 
 .section-h1 {
     text-align: center;
@@ -71,6 +72,7 @@ button a {
     margin-bottom: 40px;
     font-family: "Lora", serif;
 }
+
 
 span {
     color: var(--primary-color)
@@ -85,7 +87,6 @@ span:not(.hero h1 span, .seller-final p span, .content-right h2 span) {
 
 header {
     background-color: var(--background-color);
-    position: fixed;
     z-index: 10;
     width: 100%;
     top: 0;
@@ -96,7 +97,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 30px;
 }
 
 .nav-links {
@@ -141,7 +142,7 @@ ul li a:hover {
 
 .sidebar {
     position: fixed;
-    background-color: var(--secondary-color);
+    background-color: rgba(47, 58, 74, 0.9);
     top: 0;
     right: 0;
     height: 100vh;
@@ -149,7 +150,7 @@ ul li a:hover {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-
+    z-index: 999;
 }
 
 .sidebar h1 {
@@ -157,6 +158,13 @@ ul li a:hover {
     text-align: left;
     width: 100%;
     border-bottom: 0.5px solid white;
+    transition: 0.3s ease;
+    cursor: pointer
+}
+
+.sidebar h1:hover {
+    color: var(--callToAction-color);
+    border-bottom: 0.5px solid var(--callToAction-color);
 }
 
 .sidebar-nav-links {
@@ -182,6 +190,10 @@ ul li a:hover {
     font-size: 20px;
 }
 
+.sidebar-nav-links li a:hover {
+    color: var(--callToAction-color)
+}
+
 .close {
     position: absolute;
     color: white;
@@ -193,7 +205,7 @@ ul li a:hover {
 }
 
 .close:hover {
-    color: var(--primary-color)
+    color: var(--callToAction-color);
 }
 
 
@@ -315,8 +327,9 @@ ul li a:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    background-color: hsl(0, 0%, 97%);
+    background-color: hsl(0, 4%, 95%);
     border-radius: 6px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
 
 .project-card {
@@ -379,7 +392,7 @@ ul li a:hover {
 
 .seller2-content .content-right {
     flex: 2;
-    background-color: #f2f1f1;
+    background-color: hsl(0, 4%, 95%);
     padding: 40px;
     padding-left: 60px;
     display: flex;
@@ -448,9 +461,30 @@ ul li a:hover {
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    background-color: hsl(0, 0%, 97%);
+    background-color: hsl(0, 4%, 95%);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
     width: 70%;
     border-radius: 6px;
+}
+
+.faq h2 {
+    text-align: center;
+}
+
+.faq p:not(.faq-container p) {
+    text-align: center;
+    font-size: 18px;
+    padding-top: 20px;
+}
+
+.faq p a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: 0.2s ease;
+}
+
+.faq p a:hover {
+    color: var(--callToAction-color);
 }
 
 .faquestion {
@@ -459,9 +493,17 @@ ul li a:hover {
     cursor: pointer;
 }
 
-.faquestion h2 {
+.faquestion div {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.faquestion div i {
+    font-size: 26px;
+}
+
+.faquestion h2 {
     font-weight: 500;
 }
 
@@ -470,16 +512,31 @@ ul li a:hover {
     flex-wrap: wrap;
 }
 
-.faqP {
-    transition: 0.3s ease-in-out;
+.answer {
+    height: 0;
+    overflow: hidden;
+}
+
+.faquestion.active .answer {
+    height: auto
+}
+
+.arrow-wrapper {
+    transition: 0.5s ease-in;
+    color: var(--primary-color);
+    display: inline-flex;
+    position: relative;
+    height: 0;
+    justify-content: center;
+    align-items: center;
 }
 
 .arrow {
-    transition: 0.3s ease-in-out;
-    color: var(--primary-color)
+    transition: 0.5s ease-in;
+
 }
 
-.rotate {
+.faquestion.active .arrow {
     transform: rotate(180deg);
 }
 
@@ -514,6 +571,11 @@ ul li a:hover {
 .contact-left .left-container a i {
     font-size: 28px;
     color: var(--primary-color);
+    transition: 0.3s ease;
+}
+
+.contact-left .left-container a:hover i {
+    color: var(--callToAction-color)
 }
 
 .contact-right {
@@ -523,6 +585,7 @@ ul li a:hover {
     color: white;
     flex: 1.5;
     background-color: var(--secondary-color);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
     border-radius: 6px;
 }
 
@@ -632,11 +695,196 @@ footer h2 {
     margin-bottom: 20px;
 }
 
+/*KONTAKT*/
+.kontakt-section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.kontakt-left h2 {
+    font-weight: 800;
+    font-size: 30px;
+}
+
+.kontakt-left {
+    flex: 1;
+}
+
+.kontakt-left .kontakt-icons {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    gap: 18px;
+    padding-left: 20px;
+}
+
+.kontakt-left .kontakt-icons a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    justify-content: flex-start;
+}
+
+.kontakt-left .kontakt-icons i {
+    font-size: 28px;
+    color: var(--button-hover-bg);
+    transition: 0.3s ease;
+}
+
+.kontakt-left .kontakt-icons a:hover i {
+    color: var(--callToAction-color)
+}
+
+.kontakt-right {
+    flex: 1;
+}
+
+.kontakt-right iframe {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.kontakt-form {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.kontakt-form form {
+    background-color: hsl(0, 4%, 96%);
+    border-radius: 8px;
+    width: 90%;
+    padding: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.kontakt-form form h2 {
+    padding-bottom: 20px;
+    font-size: 26px;
+}
+
+.kontakt-form form .ime-label {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.kontakt-form form .ime-label label input:focus,
+.kontakt-form form #imejl input:focus,
+.kontakt-form form #message:focus {
+    outline: 1px solid var(--primary-color)
+}
+
+.radio div input:focus+label {
+    outline: 2px solid var(--focus-color);
+    /* Change outline color when focused */
+}
+
+.radio div input:checked+label {
+    border: 2px solid var(--active-color);
+    /* Change border color when checked */
+}
+
+
+.kontakt-form form .ime-label label {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    font-size: 18px;
+}
+
+.kontakt-form form .ime-label label input {
+    padding: 14px;
+    border-radius: 8px;
+    border: none;
+    outline: 1px solid var(--text-color);
+    font-size: 18px;
+}
+
+.kontakt-form form #imejl {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.kontakt-form form #imejl input {
+    padding: 14px;
+    border-radius: 8px;
+    border: none;
+    outline: 1px solid var(--text-color);
+    font-size: 18px;
+}
+
+.radio {
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+}
+
+.radio div {
+    padding: 10px;
+    border: 1px solid var(--text-color);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    cursor: pointer;
+}
+
+.radio div input,
+label {
+    cursor: pointer;
+    font-size: 18px;
+}
+
+
+.upit {
+    font-size: 18px;
+    margin-top: 14px;
+}
+
+#message {
+    outline: 1px solid var(--text-color);
+    font-size: 18px;
+    padding: 10px;
+}
+
+.kontakt-form form label:nth-child(5) {
+    font-size: 18px;
+    margin-top: 14px;
+}
+
+.form-submit-btn {
+    margin-top: 14px;
+    padding: 10px 20px;
+    font-size: 20px;
+}
+
 @media (max-width:1100px) {
 
     .seller-final p,
     .onama p {
         padding: 0 20px;
+    }
+
+    footer {
+        justify-content: flex-start;
+        gap: 20px;
+    }
+
+    .footer-container2 {
+        width: 100%;
+    }
+
+    .footer-container2 a {
+        width: 100%;
     }
 
 }
@@ -678,7 +926,12 @@ footer h2 {
 
     .faq .faq-container {
         width: 100%;
-        padding: 20px 0;
+        padding: 20px 20px;
+    }
+
+    .kontakt-section {
+        flex-direction: column;
+        gap: 20px;
     }
 }
 
@@ -708,6 +961,19 @@ footer h2 {
 
     .faquestion h2 {
         font-size: 20px;
+    }
+
+    .services-container {
+        flex-direction: column;
+    }
+
+    .service {
+        min-width: 0;
+    }
+
+    .radio {
+        flex-direction: column;
+        gap: 20px;
     }
 }
 
@@ -748,9 +1014,15 @@ footer h2 {
         text-align: center;
     }
 
-    .footer-container2 a {
-        width: fit-content;
+    .footer-container2 {
+        width: 100%;
     }
+
+    .footer-container2 a {
+        width: 100%;
+    }
+
+
 
 
 

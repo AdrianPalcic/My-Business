@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://kit.fontawesome.com/c1d705d9bb.js" crossorigin="anonymous"></script>
+    <title>Contact</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>My Business</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/index.html">Naslovnica</a></li>
+                <li><a href="onama.html">O Nama</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="usluge.html">Usluge</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+            <div class="open">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+        </nav>
+        <nav class="sidebar hidden animate__animated">
+
+            <h1>My Business</h1>
+            <ul class="sidebar-nav-links">
+                <li><a href="/index.html">Naslovnica</a></li>
+                <li><a href="onama.html">O Nama</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="usluge.html">Usluge</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+            <div class="close"><i class="fa-solid fa-xmark"></i></div>
+        </nav>
+    </header>
+    <div class="kontakt section-padding">
+        <h1 class="section-h1"><span>#</span>Kontakt</h1>
+        <div class="kontakt-section">
+            <div class="kontakt-left">
+                <p>Kontaktiraj nas</p>
+                <h2>Posjetite nas na našoj lokaciji</h2>
+                <div class="kontakt-icons">
+                    <a><i class="fa-regular fa-envelope"></i> my.business@gmail.com</a>
+                    <a><i class="fa-solid fa-phone"></i> 095 748 2199</a>
+                    <a><i class="fa-regular fa-clock"></i>Radno Vrijeme: 08:00h - 16:00h </a>
+                    <a><i class="fa-regular fa-map"></i>Ul. Dragutina Golika 18a</a>
+                </div>
+            </div>
+            <div class="kontakt-right">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2781.345654569409!2d15.927272576161325!3d45.80433547108146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765d6cb008870f5%3A0x9b1bce3a14159978!2sUl.%20Dragutina%20Golika%2018A%2C%2010000%2C%20Zagreb!5e0!3m2!1shr!2shr!4v1732448098365!5m2!1shr!2shr"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <div class="kontakt-form">
+            <form id="form">
+                <h2>Kontaktirajte nas!</h2>
+                <div class="ime-label">
+                    <label for="ime">Ime
+                        <input type="text" id="ime" name="ime" required>
+                    </label>
+                    <label for="prezime">Prezime
+                        <input type="text" id="prezime" name="prezime" required>
+                    </label>
+                </div>
+                <label for="email" id="imejl">Email
+                    <input type="email" id="email" name="email" required>
+                </label>
+                <p class="upit">Upit</p>
+                <div class="radio">
+                    <div>
+                        <input type="radio" id="project-idea" name="contact-reason" value="project-idea" required>
+                        <label for="project-idea">Imam ideju za projekt</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="inquiry" name="contact-reason" value="inquiry" required>
+                        <label for="inquiry">Imam upit</label>
+                    </div>
+                </div>
+                <label for="message" class="mesž">Poruka
+                    <textarea id="message" name="message" required></textarea>
+                </label>
+                <input type="checkbox" id="checkbox" required>
+                <label for="checkbox">Pristajem da me tim kontaktira</label><br>
+                <button type="submit" class="form-submit-btn">Pošalji</button>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <h1>My Business</h1>
+            <p>My Business, obrt za web dizajn</p>
+            <p><i class="fa-solid fa-phone"></i> 095 748 2199</p>
+            <p><i class="fa-solid fa-envelope"></i> my.business@gmail.com</p>
+            <button>Kontaktirajte nas</button>
+        </div>
+        <div class="footer-container2">
+            <h2>Naše Usluge</h2>
+            <a href="usluge.html">Izrada Web stranica</a>
+            <a href="usluge.html">Izrada Web aplikacija</a>
+            <a href="usluge.html">Izrada E-commerce web stranica</a>
+            <a href="usluge.html">SEO Optimizacija</a>
+            <a href="usluge.html">Održavanje Web stranica</a>
+        </div>
+        <div class="footer-container2">
+            <h2>Navigacija</h2>
+            <a href="/index.html">Naslovnica</a>
+            <a href="onama.html">O nama</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="usluge.html">Usluge</a>
+            <a href="contact.html">Kontakt</a>
+            <a href="blog.html">Blog</a>
+        </div>
+    </footer>
+    <script src="/app.js"></script>
+</body>
+
+</html>

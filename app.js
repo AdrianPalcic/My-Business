@@ -4,7 +4,7 @@ const sidebar = document.querySelector(".sidebar");
 const sidebarCloseButton = document.querySelector(".close")
 
 sidebarOpenButton.addEventListener("click", () => {
-    sidebar.classList.toggle("hidden")
+    sidebar.classList.remove("hidden")
     sidebar.classList.add("animate__fadeInRight");
     sidebar.classList.remove("animate__fadeOutRight");
 
@@ -12,23 +12,28 @@ sidebarOpenButton.addEventListener("click", () => {
 sidebarCloseButton.addEventListener("click", () => {
     sidebar.classList.remove("animate__fadeInRight");
     sidebar.classList.add("animate__fadeOutRight");
+    setTimeout(() => {
+        sidebar.classList.add("hidden")
+    }, 500)
 })
-
-if (sidebar.classList.contains("animate__fadeOutRight")) {
-    sidebar.classList.toggle("hidden")
-
-}
 
 //FAQ
 
-const question = document.querySelectorAll(".faquestion");
-const answer = document.querySelectorAll(".faqP");
-const arrow = document.querySelectorAll(".arrow");
+const questions = document.querySelectorAll('.faquestion');
 
-question.forEach((q, i) => {
-    q.addEventListener("click", () => {
-        answer[i].classList.toggle("hidden");
-        arrow[i].classList.toggle("rotate")
-    })
-
-})
+questions.forEach(question => {
+    question.addEventListener('click', () => {
+        const answer = question.querySelector('.answer');
+        if (question.classList.contains('active')) {
+            // If it's active, collapse it
+            answer.style.transition = 'height 0.6s ease';
+            answer.style.height = '0'; // Collapse immediately
+            question.classList.remove('active');
+        } else {
+            // If it's not active, expand it
+            answer.style.transition = 'height 0.6s ease';
+            answer.style.height = answer.scrollHeight + 'px'; // Set to full height
+            question.classList.add('active');
+        }
+    });
+});
