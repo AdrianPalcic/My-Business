@@ -1,7 +1,8 @@
 :root {
     --primary-color: #007BFF;
     --secondary-color: #2F3A4A;
-    --background-color: #E8E8E8;
+    --secondary-gradient: linear-gradient(135deg, #2F3A4A, #1F2735);
+    --background-color: hsl(0, 0%, 96%);
     --text-color: #333333;
     --heading-color: #2F3A4A;
     --button-hover-bg: #0056b3;
@@ -70,7 +71,6 @@ button a {
     text-align: center;
     font-size: 48px;
     margin-bottom: 40px;
-    font-family: "Lora", serif;
 }
 
 
@@ -78,10 +78,6 @@ span {
     color: var(--primary-color)
 }
 
-span:not(.hero h1 span, .seller-final p span, .content-right h2 span) {
-    font-family: "Lora", serif;
-    color: var(--primary-color)
-}
 
 /* styles for specific elements */
 
@@ -261,7 +257,7 @@ ul li a:hover {
 }
 
 .key-services {
-    background-color: var(--secondary-color);
+    background: var(--secondary-gradient);
     display: flex;
     gap: 50px;
     align-items: center;
@@ -373,7 +369,7 @@ ul li a:hover {
 
 .seller2-content .content-left {
     flex: 1;
-    background-color: var(--secondary-color);
+    background: var(--secondary-gradient);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -584,7 +580,7 @@ ul li a:hover {
     padding: 20px;
     color: white;
     flex: 1.5;
-    background-color: var(--secondary-color);
+    background: var(--secondary-gradient);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
     border-radius: 6px;
 }
@@ -621,7 +617,7 @@ textarea {
 }
 
 footer {
-    background-color: var(--secondary-color);
+    background: var(--secondary-gradient);
     color: white;
     padding: 20px;
     padding-top: 40px;
@@ -646,7 +642,6 @@ footer button:hover {
     font-size: 18px;
     margin-bottom: 20px;
     font-weight: 700;
-    font-family: 'Lora';
 }
 
 .footer-container p:not(:first-child, :nth-child(3)) {
@@ -804,6 +799,16 @@ footer h2 {
     font-size: 18px;
 }
 
+.kontakt-form form .ime-label label input:invalid:not(:placeholder-shown),
+.kontakt-form form #imejl input:invalid:not(:placeholder-shown) {
+    outline: 1px solid red;
+}
+
+.kontakt-form form .ime-label label input:valid:not(:placeholder-shown),
+.kontakt-form form #imejl input:valid:not(:placeholder-shown) {
+    outline: 1px solid green;
+}
+
 .kontakt-form form #imejl {
     display: flex;
     flex-direction: column;
@@ -867,10 +872,155 @@ label {
     font-size: 20px;
 }
 
+
+/*USLUGE*/
+
+
+.usluge h3 {
+    text-align: center;
+    font-size: 18px;
+}
+
+.usluge .section-h1 {
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.usluge p:not(.uslkont p, .uslkont .uslcard p, .footer-container2 a) {
+    text-align: center;
+    padding: 0 250px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 2;
+}
+
+.usluge h3 span {
+    color: #0056b3;
+}
+
+.uslkont {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 30px;
+}
+
+.uslcard {
+    background-color: hsl(0, 0%, 100%);
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.usluge .uslkont .uslcard p,
+.usluge .uslkont .uslcard a {
+    text-align: center;
+}
+
+
+
+.uslcard p:has(span) {
+    color: #0056b3;
+    font-size: 20px;
+    font-weight: 500;
+
+}
+
+.uslcard p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.uslcard a {
+    color: var(--button-hover-bg);
+    font-weight: 500;
+    border-radius: 6px;
+    transition: 0.2s ease;
+    padding: 20px;
+    margin: auto;
+}
+
+.uslcard a:hover {
+    cursor: pointer;
+    color: var(--callToAction-color);
+}
+
+
+.uslcard .usluge-slika {
+    width: 100%;
+    pointer-events: none;
+    height: 300px;
+}
+
+.blend {
+    mix-blend-mode: multiply;
+}
+
+.port2 {
+    background: var(--secondary-gradient);
+    margin-bottom: 0;
+}
+
+.port2 h1,
+.port2 p {
+    color: white;
+}
+
+.port22 {
+    box-shadow: none;
+}
+
+.seller3 {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: hsl(0, 0%, 94%);
+}
+
+.seller3 .seller3-left h1 {
+    font-weight: 700;
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+.seller3 .seller3-left p {
+    font-size: 18px;
+    font-weight: 500;
+    padding-left: 2px;
+}
+
+.seller3 .seller3-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.seller3 .seller3-left .callToAction {
+    margin-top: 10px;
+    width: fit-content
+}
+
+.seller3 .seller3-right {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+}
+
+.seller3-pic {
+    pointer-events: none;
+    width: 500px;
+    height: 500px;
+
+}
+
 @media (max-width:1100px) {
 
     .seller-final p,
-    .onama p {
+    .onama p,
+    .usluge p:not(.uslkont p, .uslkont .uslcard p, .footer-container2 a) {
         padding: 0 20px;
     }
 
@@ -886,6 +1036,19 @@ label {
     .footer-container2 a {
         width: 100%;
     }
+
+    .seller3 {
+        flex-direction: column;
+    }
+
+    .seller3 .seller3-left {
+        align-items: center;
+    }
+
+    .seller3 .seller3-left p {
+        text-align: center;
+    }
+
 
 }
 
@@ -915,6 +1078,15 @@ label {
         flex-direction: column;
     }
 
+    .uslcard {
+        width: 100%;
+        height: auto
+    }
+
+    .uslkont {
+        gap: 10px;
+    }
+
     .project-card {
         width: 100%;
         height: auto;
@@ -932,6 +1104,15 @@ label {
     .kontakt-section {
         flex-direction: column;
         gap: 20px;
+    }
+
+    .seller3-pic {
+        width: 100%;
+        height: 300px;
+    }
+
+    .seller3 .seller3-left h1 {
+        text-align: center;
     }
 }
 
@@ -975,6 +1156,10 @@ label {
         flex-direction: column;
         gap: 20px;
     }
+
+    .usluge p:not(.uslkont p, .uslkont .uslcard p, .footer-container2 a) {
+        font-size: 16px;
+    }
 }
 
 @media (max-width:500px) {
@@ -997,6 +1182,7 @@ label {
         background-position: inherit;
     }
 
+
     .hero p {
         text-align: center;
         margin-left: 0;
@@ -1007,6 +1193,10 @@ label {
     }
 
     .section-h1 {
+        font-size: 36px;
+    }
+
+    .seller3 .seller3-left h1 {
         font-size: 36px;
     }
 

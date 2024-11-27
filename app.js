@@ -37,3 +37,19 @@ questions.forEach(question => {
         }
     });
 });
+
+//Form
+
+const form = document.getElementById("form");
+const nameInput = document.getElementById("ime");
+const surnameInput = document.getElementById("prezime")
+const emailInput = document.getElementById("email");
+const message = document.getElementById("message");
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (!nameInput.value || !surnameInput.value || !emailInput.value) {
+        alert("Please fill in all fields");
+        return
+    }
+})
