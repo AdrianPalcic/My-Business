@@ -1211,9 +1211,10 @@ label {
     .footer-container2 a {
         width: 100%;
     }
-.kontakt-form form {
-    width: 100%;
-}
+
+    .kontakt-form form {
+        width: 100%;
+    }
 
 
 
