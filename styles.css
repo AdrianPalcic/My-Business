@@ -322,10 +322,15 @@ ul li a:hover {
 .project-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     background-color: hsl(0, 4%, 95%);
     border-radius: 6px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-container a {
+    text-decoration: none;
+    color: var(--text-color);
 }
 
 .project-card {
@@ -1013,6 +1018,95 @@ label {
     pointer-events: none;
     width: 500px;
     height: 500px;
+
+}
+
+.projekt-section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.projekt-section .projekt-left {
+    flex: 2;
+    padding: 40px;
+    height: 500px;
+    min-width: 800px;
+}
+
+.projekt-section .projekt-left img {
+    width: 100%;
+    height: 100%;
+}
+
+.projekt-section .projekt-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+.projekt-section .projekt-right h3 {
+    font-weight: 700;
+    font-size: 22px;
+    border-bottom: 1px solid var(--secondary-color);
+    margin-bottom: 12px;
+}
+
+.projekt-section .projekt-right p {
+    margin-bottom: 12px;
+    font-weight: 600;
+    font-size: 18px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2)
+}
+
+.projekt-section .projekt-right p span {
+    font-weight: 400;
+}
+
+.projekt-section .projekt-right p span a {
+    text-decoration: none;
+    color: var(--primary-color)
+}
+
+.projekt-section .projekt-right .projekt-desc {
+    margin-top: 20px;
+}
+
+.projekt-section .projekt-right .projekt-desc p {
+    all: unset;
+}
+
+.projekt-section .projekt-right .projekt-desc p {
+    font-size: 18px;
+}
+
+.projekt-section .projekt-left img {
+    width: 100%;
+    height: 100%;
+}
+
+.next-pervious-slide {
+    background-color: hsl(216, 22%, 94%);
+    border-radius: 7px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 1300px) {
+    .projekt-section {
+        flex-direction: column;
+    }
+
+    .projekt-section .projekt-left {
+        min-width: 0;
+        width: 100%;
+    }
 
 }
 
