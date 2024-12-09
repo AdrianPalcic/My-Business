@@ -1102,121 +1102,70 @@ label {
     margin-bottom: 20px;
 }
 
-.usluge2 p:not(.usluge-seller1 .usluge-seller-left p, .usluge-seller2 p) {
-    font-size: 18px;
+.usluge2 p {
     padding: 0 220px;
     font-weight: 500;
     text-align: center;
+    font-size: 18px;
 }
 
-.usluge-seller1 {
-    display: flex;
-    margin-top: 40px;
-    padding: 80px;
-    flex-wrap: wrap;
+.usluge2-objasnjenje {
+    background-color: rgb(241, 246, 250);
 }
 
-.usluge-seller1 .usluge-seller-left {
-    flex: 1.2;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.usluge2-objasnjenje.section-padding {
+    margin-bottom: 0px;
+    padding-bottom: 40px;
 }
 
-.usluge-seller1 .usluge-seller-left h1 {
+.usluge2-objasnjenje h2 {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
     margin-bottom: 20px;
 }
 
-.usluge-seller1 .usluge-seller-left p {
-    padding: 0;
-    font-size: 18px;
-    font-weight: 500;
-}
-
-.usluge-seller1 .usluge-seller-right {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.usluge-seller1 .usluge-seller-right img {
-    width: 480px;
-    height: 480px;
-    object-fit: cover;
-    mix-blend-mode: multiply;
-}
-
-.usluge-seller2 {
-    background: var(--secondary-gradient);
-    padding: 12px;
-}
-
-.usluge-seller2 h1 {
-    color: white;
-    text-align: center;
-}
-
-.usluge-seller2 i {
-    color: white;
-    text-align: center;
-    font-size: 50px;
-    color: var(--primary-color);
-    padding: 20px;
-    background-color: #1F2735;
-    border-radius: 50%;
-}
-
-.usluge-seller2 p {
-    color: white;
-    padding: 0;
-    text-align: center;
-    font-size: 18px;
-}
-
-.usluge-seller2 .center {
-    margin-bottom: 5px;
-}
-
-.usluge-seller2 .center button {
-    width: 200px;
-}
-
-.se3 {
-    display: flex;
-    flex-direction: row-reverse;
-    flex-wrap: wrap;
-}
-
-.se3 .usluge-seller-right img {
-    height: 500px;
-}
-
-.se3 .usluge-seller-left button {
-    width: 200px;
-}
-
-.usluge-seller3.section-padding {
+.usluge2-objasnjenje h2:not(:first-child) {
     margin-top: 20px;
-    margin-bottom: 20px;
 }
 
+.usluge2-objasnjenje p {
+    font-size: 18px;
+}
 
-@media (max-width: 1300px) {
-    .projekt-section {
-        flex-direction: column;
-    }
+.usluge2-objasnjenje h3 {
+    margin-top: 6px;
+}
 
-    .projekt-section .projekt-left {
-        min-width: 0;
-        width: 100%;
-    }
+.usluge2-objasnjenje ul:not(.sublist) {
+    margin-top: 14px;
+    padding-left: 30px;
+    list-style: decimal;
+}
 
-    .usluge-seller1 {
-        flex-direction: column;
-    }
+.usluge2-objasnjenje ul li {
+    margin: 6px;
+}
 
+.usluge2-objasnjenje button {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 12px;
+    background-color: rgba(0, 123, 255, 0.06);
+    color: var(--callToAction-color)
+}
+
+.usluge2-objasnjenje button:hover {
+    background-color: var(--callToAction-color);
+    color: white;
+}
+
+.sublist {
+    padding-left: 30px;
+    margin: 8px 0;
+}
+
+.sublist span {
+    color: var(--heading-color);
+    font-weight: 600;
 }
 
 @media (max-width:1100px) {
@@ -1229,6 +1178,7 @@ label {
 
     .usluge2 p:not(.usluge-seller1 .usluge-seller-left p, .usluge-seller2 p) {
         padding: 0 20px;
+        text-align: left;
     }
 
     footer {
@@ -1256,9 +1206,7 @@ label {
         text-align: center;
     }
 
-    .se3 {
-        padding: 0;
-    }
+
 
 
 }
@@ -1330,26 +1278,7 @@ label {
         text-align: center;
     }
 
-    .usluge-seller1 {
-        flex-direction: column;
-    }
 
-    .usluge-seller1 .usluge-seller-left h1 {
-        text-align: center;
-    }
-
-    .se3 {
-        flex-direction: column;
-    }
-
-    .se3 .usluge-seller-right {
-        flex: 0;
-    }
-
-    .usluge-seller1 .usluge-seller-right img {
-        width: 100%;
-        height: 500px;
-    }
 }
 
 @media (max-width:700px) {
@@ -1456,8 +1385,10 @@ label {
         width: 100%;
     }
 
-    .usluge-seller1 .usluge-seller-right img {
-        height: 300px;
+    .usluge2-objasnjenje .left {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
     }
 
 
