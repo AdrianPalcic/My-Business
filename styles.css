@@ -1340,6 +1340,17 @@ label {
         flex-direction: column;
     }
 
+    .projekt-section {
+        flex-direction: column;
+    }
+
+    .projekt-section .projekt-left {
+        min-width: 0;
+        height: auto;
+        width: 100%;
+    }
+
+
     .uslcard {
         width: 100%;
         height: auto
@@ -1391,6 +1402,7 @@ label {
         width: 100vw;
         padding: 50px 0;
     }
+
 
 }
 
