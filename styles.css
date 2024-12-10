@@ -1168,15 +1168,114 @@ label {
     font-weight: 600;
 }
 
+.onama-section p {
+    font-size: 18px;
+    text-align: center;
+    padding: 0 250px;
+    font-weight: 500;
+}
+
+.onama-usluge {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 0;
+}
+
+.onama-usluge a {
+    text-decoration: none;
+}
+
+.onama-usluge-card {
+    display: flex;
+    align-items: center;
+    width: 400px;
+    padding: 20px;
+    gap: 10px;
+    border-radius: 8px;
+    flex-wrap: wrap;
+    background-color: hsl(0, 4%, 95%);
+    border-radius: 6px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+}
+
+
+.onama-usluge-card i {
+    font-size: 40px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.first i {
+    color: var(--primary-color);
+    background-color: rgba(0, 123, 255, 0.2);
+}
+
+.first h3 {
+    color: var(--primary-color)
+}
+
+.first:hover {
+    background-color: rgba(0, 123, 255, 0.1);
+}
+
+.second i {
+    color: rgb(162, 75, 162);
+    background-color: rgba(162, 75, 162, 0.2);
+}
+
+.second h3 {
+    color: rgb(162, 75, 162);
+}
+
+.second:hover {
+    background-color: rgba(162, 75, 162, 0.1);
+}
+
+.third i {
+    color: rgb(36, 91, 91);
+    background-color: rgba(36, 91, 91, 0.2);
+}
+
+.third h3 {
+    color: rgb(36, 91, 91);
+}
+
+.third:hover {
+    background-color: rgba(36, 91, 91, 0.1);
+}
+
+.fourth i {
+    color: rgb(93, 19, 93);
+    background-color: rgba(93, 19, 93, 0.2);
+}
+
+.fourth h3 {
+    color: rgb(93, 19, 93);
+}
+
+.fourth:hover {
+    background-color: rgba(93, 19, 93, 0.1);
+}
+
 @media (max-width:1100px) {
 
     .seller-final p,
     .onama p,
     .usluge p:not(.uslkont p, .uslkont .uslcard p, .footer-container2 a) {
+        text-align: left;
         padding: 0 20px;
     }
 
     .usluge2 p:not(.usluge-seller1 .usluge-seller-left p, .usluge-seller2 p) {
+        padding: 0 20px;
+        text-align: left;
+    }
+
+    .onama-section p {
         padding: 0 20px;
         text-align: left;
     }
@@ -1278,6 +1377,20 @@ label {
         text-align: center;
     }
 
+    .onama-usluge {
+        flex-direction: column;
+    }
+
+    .onama-usluge {
+        width: 100%;
+        gap: 0;
+    }
+
+    .onama-usluge-card {
+        flex-direction: column;
+        width: 100vw;
+        padding: 50px 0;
+    }
 
 }
 
@@ -1326,9 +1439,6 @@ label {
         gap: 20px;
     }
 
-    .usluge p:not(.uslkont p, .uslkont .uslcard p, .footer-container2 a) {
-        font-size: 16px;
-    }
 }
 
 @media (max-width:500px) {
@@ -1390,6 +1500,11 @@ label {
         justify-content: center;
         gap: 50px;
     }
+
+    .on-phone-center {
+        text-align: center;
+    }
+
 
 
 
