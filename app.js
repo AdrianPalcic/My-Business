@@ -16,6 +16,52 @@ sidebarCloseButton.addEventListener("click", () => {
         sidebar.classList.add("hidden")
     }, 500)
 })
+//animations
+
+// Wait until the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', () => {
+    const elementsToAnimate = document.querySelectorAll('.animate-me');
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-in-view');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
+
+    elementsToAnimate.forEach(element => {
+        observer.observe(element);
+    });
+});
+document.addEventListener('DOMContentLoaded', () => {
+    // Select all elements with animate-left or animate-right classes
+    const elementsToAnimate = document.querySelectorAll('.animate-left, .animate-right');
+
+    // Create the IntersectionObserver
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Check the class of the element and add the appropriate custom animation class
+                if (entry.target.classList.contains('animate-left')) {
+                    entry.target.classList.add('animate__fadeInLeft'); // Apply fadeInLeft
+                } else if (entry.target.classList.contains('animate-right')) {
+                    entry.target.classList.add('animate__fadeInRight'); // Apply fadeInRight
+                }
+
+                // Optional: Stop observing the element after it has been animated
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 }); // Trigger when 50% of the element is visible
+
+    // Start observing each element
+    elementsToAnimate.forEach(element => {
+        observer.observe(element);
+    });
+});
+
 
 //FAQ
 
@@ -26,7 +72,7 @@ questions.forEach(question => {
         const answer = question.querySelector('.answer');
         if (question.classList.contains('active')) {
             // If it's active, collapse it
-            answer.style.transition = 'height 0.6s ease';
+            answer.style.transition = 'height 0.3s ease';
             answer.style.height = '0'; // Collapse immediately
             question.classList.remove('active');
         } else {
