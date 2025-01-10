@@ -106,10 +106,37 @@ nav {
 .logo {
     flex: 1;
     cursor: pointer;
+    position: relative;
 }
 
-.logo h1 {
-    color: var(--secondary-color);
+.logo-img {
+    width: 200px;
+    height: auto;
+    mix-blend-mode: multiply;
+    position: absolute;
+    top: -40px;
+}
+
+.footer-container {
+    position: relative;
+}
+
+.footer-container .logo-img {
+    position: relative;
+    mix-blend-mode: color-dodge;
+    width: 260px;
+    margin-top: 10px;
+}
+
+.sidebar .logo-img {
+    position: relative;
+    mix-blend-mode: color-dodge;
+    width: 160px;
+    margin-top: 10px;
+}
+
+.sidebar ul {
+    margin-top: -60px;
 }
 
 ul li a {
@@ -586,6 +613,12 @@ footer button:hover {
 
 .footer-container p:not(:first-child, :nth-child(3)) {
     margin-bottom: 20px;
+}
+
+.footer-container p:nth-child(2) {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: -60px;
 }
 
 .footer-container p:not(:nth-child(2)) {
@@ -1385,6 +1418,7 @@ label {
         padding: 5px;
     }
 
+
     .usluge-seller1 {
         padding: 5px;
     }
@@ -1447,8 +1481,33 @@ label {
 
 
     .hero p {
-        text-align: center;
-        margin-left: 0;
+        text-align: left;
+        font-weight: 600;
+    }
+
+    .seller2-content .content-right p {
+        text-align: left;
+        padding: 0 10px;
+        font-size: 20px;
+    }
+
+    .seller-final p {
+        text-align: left;
+        padding: 0 10px;
+    }
+
+    .onama p {
+        text-align: left;
+        padding: 0 10px;
+    }
+
+    .faq p {
+        text-align: left;
+        padding: 0 10px;
+    }
+
+    .usluge2-objasnjenje p {
+        padding: 0 10px;
     }
 
     .hero .button-container {
@@ -1463,9 +1522,6 @@ label {
         font-size: 36px;
     }
 
-    .content-right p {
-        text-align: center;
-    }
 
     .footer-container2 {
         width: 100%;
@@ -1489,7 +1545,15 @@ label {
         text-align: center;
     }
 
+    .logo-img {
+        width: 150px;
+    }
 
+    .footer-container .logo-img {
+        width: 200px;
+        margin-bottom: 10px;
+        left: -20px;
+    }
 
 
 }
